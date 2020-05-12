@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:PaintView="http://schemas.android.com/apk/res-auto"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+
+    <!--    <HorizontalScrollView-->
+    <!--        app:layout_constraintLeft_toLeftOf="parent"-->
+    <!--        app:layout_constraintTop_toTopOf="parent"-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="match_parent">-->
+
+
+    <com.example.mychartview.ChartView
+        android:id="@+id/chart"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        PaintView:column_color="#FF4246"
+        PaintView:column_color_gradient="true"
+        PaintView:column_end_color="#8BB6FF"
+        PaintView:column_start_color="#508EF9"
+        PaintView:column_text_color="@color/colorPrimary"
+        PaintView:column_width="15dp"
+        PaintView:is_chart_data_visible="false"
+        PaintView:layout_constraintLeft_toLeftOf="parent"
+        PaintView:layout_constraintRight_toRightOf="parent"
+        PaintView:layout_constraintTop_toTopOf="parent"
+        PaintView:line_chart_color="#FB6767"
+        PaintView:line_point_color="#FB6767"
+        PaintView:line_text_color="#FB6767"
+        PaintView:x_line_color="#FB6767"
+        PaintView:x_padding="30dp"
+        PaintView:x_step="40dp"
+        PaintView:x_text_color="#333333"
+        PaintView:y_padding="40dp"
+        PaintView:y_step="35dp"
+        PaintView:y_text_color="#999999" />
+
+
+    <!--    </HorizontalScrollView>-->
+
+</androidx.constraintlayout.widget.ConstraintLayout>

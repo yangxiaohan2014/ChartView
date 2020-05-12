@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="ChartView">
+        <attr name="x_step" format="dimension"/>
+        <attr name="y_step" format="dimension"/>
+        <attr name="x_text_color" format="color"/>
+        <attr name="y_text_color" format="color"/>
+        <attr name="x_line_color" format="color"/>
+        <attr name="column_color" format="color"/>
+        <attr name="column_width" format="dimension"/>
+        <attr name="column_color_gradient" format="boolean"/>
+        <attr name="column_start_color" format="color"/>
+        <attr name="column_end_color" format="color"/>
+        <attr name="column_text_color" format="color"/>
+        <attr name="x_padding" format="dimension"/>
+        <attr name="y_padding" format="dimension"/>
+        <attr name="line_point_color" format="color"/>
+        <attr name="line_chart_color" format="color"/>
+        <attr name="line_text_color" format="color"/>
+        <attr name="is_chart_data_visible" format="boolean"/>
+
+    </declare-styleable>
+    <attr name="xylinecolor" format="color" />
+    <!-- xy坐标轴宽度 -->
+    <attr name="xylinewidth" format="dimension" />
+    <!-- xy坐标轴文字颜色 -->
+    <attr name="xytextcolor" format="color" />
+    <!-- xy坐标轴文字大小 -->
+    <attr name="xytextsize" format="dimension" />
+    <!-- 折线图中折线的颜色 -->
+    <attr name="linecolor" format="color" />
+    <!-- x轴各个坐标点水平间距 -->
+    <attr name="interval" format="dimension" />
+    <!-- 背景颜色 -->
+    <attr name="bgcolor" format="color" />
+    <!--是否在ACTION_UP时，根据速度进行自滑动，建议关闭，过于占用GPU-->
+    <attr name="isScroll" format="boolean" />
+    <declare-styleable name="chartView">
+        <attr name="xylinecolor" />
+        <attr name="xylinewidth" />
+        <attr name="xytextcolor" />
+        <attr name="xytextsize" />
+        <attr name="linecolor" />
+        <attr name="interval" />
+        <attr name="bgcolor" />
+        <attr name="isScroll" />
+    </declare-styleable>
+</resources>
+
