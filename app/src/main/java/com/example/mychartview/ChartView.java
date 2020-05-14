@@ -178,12 +178,8 @@ public class ChartView extends View {
             oy = startY + height - paddingBottom;
 
             xInit = startX + xStep;
-            minXInit = width - (width - ox) * 0.1f - xStep * (xPoints.size() - 1);//减去0.1f是因为最后一个X周刻度距离右边的长度为X轴可见长度的10%
+            minXInit = width - ox - xStep * (xPoints.size() - 1);
             maxXInit = xInit;
-//            Log.i(TAG, "onLayout  minXInit====" + minXInit);
-//            Log.i(TAG, "onLayout  minXInit====" + minXInit);
-//            Log.i(TAG, "onLayout  xPoints.size()====" + xPoints.size());
-//            Log.i(TAG, "onLayout  ox====" + ox);
         }
 
         super.onLayout(changed, left, top, right, bottom);
@@ -415,7 +411,6 @@ public class ChartView extends View {
 
     @Override
     public boolean onTouchEvent(MotionEvent event) {
-        int action = event.getAction();
 //        if (isScroll){
 //            return super.onTouchEvent(event);
 //        }
@@ -432,16 +427,19 @@ public class ChartView extends View {
                 lastY = y;
                 break;
             case MotionEvent.ACTION_MOVE:
-                int offsetx = (int) (event.getX() - lastX);
-                lastX = (int) event.getX();
-                if (xInit + offsetx < minXInit) {
-                    xInit = (int) minXInit;
-                } else if (xInit + offsetx > maxXInit) {
-                    xInit = (int) maxXInit;
-                } else {
-                    xInit = xInit + offsetx;
+                if (xStep*xPoints.size() + startX > getWidth()){
+                    int offsetx = (int) (event.getX() - lastX);
+                    lastX = (int) event.getX();
+                    if (xInit + offsetx < minXInit) {
+                        xInit = (int) minXInit;
+                    } else if (xInit + offsetx > maxXInit) {
+                        xInit = (int) maxXInit;
+                    } else {
+                        xInit = xInit + offsetx;
+                    }
+                    invalidate();
                 }
-                invalidate();
+
                 break;
             case MotionEvent.ACTION_UP:
                 if (event.getX() - lastX < 5) {
